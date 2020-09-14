@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="col">
+    <form action="/seeDB" enctype="multipart/form-data" method="post">
+        <div class="form-group">
+            Merci d'avoir rempli le formulaire
+            
+            <ul>
+                {% for user.username in users %}
+                <li>{{ user.username }}</li>
+                {% endfor %}
+            </ul>
+            {{ for row in rows:
+                print(row)  }}
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">See the Database</button>
+            </div>
+        </div>
+    </form>
+    {% endblock %}

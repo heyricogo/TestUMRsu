@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/submit" enctype="multipart/form-data" method="post">
+            <h1>Test UMRsu</h1>
+            <h2>Test</h2>
+            <div class="form-group">
+                <label for="courriel">Courriel</label> :
+                <input type="email" name="courriel" id="courriel" required placeholder="utilisateur@domaine.xx">
+                <span id="courriel"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="dateAnalyse">Date réponse formulaire</label>
+                <input type="date" name="dateAnalyse">
+            </div>
+            
+            <div class="form-group">
+                <label for="responsable">Responsable de l'analyse</label>
+                <input type="text" name="responsable" id="responsable" required>
+                <span id="responsable"></span>
+            </div>
+
+            <p>
+                    <label for="projetProcessus">Projet ou processus évalué</label>
+                    <input type="text" name="projetProcessus" id="projetProcessus" required>
+                    <span id="projetProcessus"></span>
+            </p>
+            
+            <p>
+                <label for="tailleProjet">Taille du projet ou du processus</label>
+                <br>
+                <input type="radio" name="tailleProjet" id="petitProjet" value="petitProjet" checked>
+                <label for="petitProjet">PETIT projet ou procesus</label>
+                <br>
+                <input type="radio" name="tailleProjet" id="moyenProjet" value="moyenProjet">
+                <label for="moyenProjet">MOYEN projet ou processus ou QUELQUES PETITS</label>
+                <br>
+                <input type="radio" name="tailleProjet" id="grandProjet" value="grandProjet">
+                <label for="grandProjet">GRAND projet ou processus ou PLUSIEURS PETITS ou QUELQUES MOYENS</label>
+                <br>
+            </p>
+
+            <p>
+                <label for="equipe">Membres de l'équipe</label>
+                <textarea name="equipe" id="equipe"></textarea>
+            </p>
+
+
+                <div class="form-group">
+                <input class="form-control-file" name="file1" type="file"/>
+            </div>
+            <div class="form-group">
+                <input class="form-control-file" name="file2" type="file"/>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" name="algorithm" type="radio" value="lines"/>
+                        Compare lines
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" name="algorithm" type="radio" value="sentences"/>
+                        Compare sentences
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" name="algorithm" type="radio" value="substrings"/>
+                        Compare substrings
+                        <input class="form-control form-control-sm" min="1" name="length" placeholder="of length n" type="number"/>
+                    </label>
+                </div>
+            </div>
+            <button class="btn btn-default" type="submit">Compare</button>
+        </form>
+    </div>
+
+{% endblock %}

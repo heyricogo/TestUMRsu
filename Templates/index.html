@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <div class="col">
+        <form action="/submit" enctype="multipart/form-data" method="post">
+
+            <div class="form-group">
+                <label>Username : </label>
+                <input name="username" id="username" type="text" required>    
+            </div>
+
+            <div class="form-group">
+                <label>email : </label>
+                <input name="email" id="email" type="email" required>    
+            </div>
+            
+            <div class="form-group">
+                <label>Date : </label>
+                <input name="formDate" id="formDate" type="date" required>    
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Submit</button>
+            </div>
+        </form>
+
+{% endblock %}
